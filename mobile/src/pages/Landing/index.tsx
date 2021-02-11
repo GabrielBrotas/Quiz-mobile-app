@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 import {
   Container,
   Title,
   Text,
-  Button,
-  ButtonText,
   ButtonsContainer,
 } from './styles';
 
+import Button from '../../components/Button';
+
 const Landing: React.FC = () => {
+  const navigation = useNavigation();
+
+  const handleStartQuiz = useCallback( () => {
+    navigation.navigate('Questions');
+  }, [])
+
   return (
     <Container>
       <Title>Octupus Quiz</Title>
@@ -22,23 +29,31 @@ const Landing: React.FC = () => {
       <Text>Escolha uma categoria:</Text>
 
       <ButtonsContainer>
-        <Button>
-          <ButtonText>Portugues</ButtonText>
+        <Button
+          onPress={handleStartQuiz}
+        >
+          Portugues
         </Button>
 
-        <Button>
-          <ButtonText>Portugues</ButtonText>
+        <Button
+          onPress={handleStartQuiz}
+        >
+          Portugues
         </Button>
 
-        <Button>
-          <ButtonText>Portugues</ButtonText>
+        <Button
+          onPress={handleStartQuiz}
+        >
+          Portugues
         </Button>
 
-        <Button>
-          <ButtonText>Portugues</ButtonText>
+        <Button
+          onPress={handleStartQuiz}
+        >
+          Portugues
         </Button>
       </ButtonsContainer>
-      
+
     </Container>
   )
 };
