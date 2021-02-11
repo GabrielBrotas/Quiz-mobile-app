@@ -8,9 +8,9 @@ export default class GetCategoriesService {
     })
 
     // remover as categorias existentes e remover duplicadas
-    const categoriesWithoutdDuplicates = categories
+    const categoriesWithoutDuplicates = categories
       .filter((value, index, self) => self.indexOf(value) === index);
 
-    return categoriesWithoutdDuplicates;
+    return categoriesWithoutDuplicates;
   }
 }

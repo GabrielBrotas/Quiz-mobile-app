@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
-interface IQuestionAnswer {
+export interface IQuestionAnswer {
   answer: string;
   isCorrectAnswer: boolean;
 }
