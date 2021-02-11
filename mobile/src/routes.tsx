@@ -16,9 +16,9 @@ const Routes: React.FC = () => (
         cardStyle: {backgroundColor: '#8257E5'}
         }}
     >
-        <Screen name="EndGame" component={EndGame} />
-        <Screen name="Questions" component={Questions} />
         <Screen name="Landing" component={Landing} />
+        <Screen name="Questions" component={Questions} />
+        <Screen name="EndGame" component={EndGame} />
     </Navigator>
   </NavigationContainer>
 );

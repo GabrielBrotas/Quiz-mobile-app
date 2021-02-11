@@ -1,5 +1,6 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import api from '../../service/api';
 
 import {
   Container,
@@ -13,9 +14,19 @@ import Button from '../../components/Button';
 const Landing: React.FC = () => {
   const navigation = useNavigation();
 
+  const [categories, setCategories] = useState<string[]>([]);
+
+  useEffect(() => {
+    api.get('/categories').then( response => {
+      setCategories(response.data);
+    }).catch( err => {
+      console.log(err);
+    });
+  }, []);
+
   const handleStartQuiz = useCallback( () => {
     navigation.navigate('Questions');
-  }, [])
+  }, []);
 
   return (
     <Container>
@@ -29,29 +40,14 @@ const Landing: React.FC = () => {
       <Text>Escolha uma categoria:</Text>
 
       <ButtonsContainer>
+        {categories.map( category => (
         <Button
+          key={category}
           onPress={handleStartQuiz}
         >
-          Portugues
+          {category}
         </Button>
-
-        <Button
-          onPress={handleStartQuiz}
-        >
-          Portugues
-        </Button>
-
-        <Button
-          onPress={handleStartQuiz}
-        >
-          Portugues
-        </Button>
-
-        <Button
-          onPress={handleStartQuiz}
-        >
-          Portugues
-        </Button>
+        ))}
       </ButtonsContainer>
 
     </Container>

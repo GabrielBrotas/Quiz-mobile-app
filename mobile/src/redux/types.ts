@@ -1,0 +1,4 @@
+export const GET_QUESTIONS = 'GET_QUESTIONS';
+export const GET_CATEGORIES = 'GET_CATEGORIES';
+
+export const RESET_GAME = 'RESET_GAME';
