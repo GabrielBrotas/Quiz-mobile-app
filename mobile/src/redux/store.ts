@@ -8,6 +8,7 @@ import {
 import thunk from 'redux-thunk';
 
 import questionsReducers from './reducers/questionsReducers';
+import categoriesReducers from './reducers/categoriesReducers';
 
 const middleware = [thunk];
 
@@ -24,15 +25,21 @@ interface QuestionDTO {
       isCorrectAnswer: boolean;
     }
   ]
-}
+};
 
 export interface StateProps {
-  category: string;
-  questions: QuestionDTO[];
+  categories: {
+    categories: string[];
+    category: string | null;
+  };
+  questions: {
+    questions: QuestionDTO[];
+  };
 };
 
 const reducers = combineReducers({
   questions: questionsReducers,
+  categories: categoriesReducers,
 });
 
 const store = createStore(

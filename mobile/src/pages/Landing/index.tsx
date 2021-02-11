@@ -1,6 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import api from '../../service/api';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { getCategories } from '../../redux/actions/categoriesActions';
+import { StateProps } from '../../redux/store'
 
 import {
   Container,
@@ -13,19 +16,16 @@ import Button from '../../components/Button';
 
 const Landing: React.FC = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
-  const [categories, setCategories] = useState<string[]>([]);
+  const { categories } = useSelector( (state: StateProps) => state.categories);
 
   useEffect(() => {
-    api.get('/categories').then( response => {
-      setCategories(response.data);
-    }).catch( err => {
-      console.log(err);
-    });
+    dispatch(getCategories());
   }, []);
 
-  const handleStartQuiz = useCallback( () => {
-    navigation.navigate('Questions');
+  const handleStartQuiz = useCallback( (category: string) => {
+    navigation.navigate('Questions', {category});
   }, []);
 
   return (
@@ -43,7 +43,7 @@ const Landing: React.FC = () => {
         {categories.map( category => (
         <Button
           key={category}
-          onPress={handleStartQuiz}
+          onPress={() => handleStartQuiz(category)}
         >
           {category}
         </Button>

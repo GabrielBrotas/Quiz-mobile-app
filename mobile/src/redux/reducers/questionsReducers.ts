@@ -1,7 +1,6 @@
 import { GET_QUESTIONS, GET_CATEGORIES, RESET_GAME } from "../types";
 
 const initialState = {
-  category: null,
   questions: [],
 };
 
@@ -22,7 +21,7 @@ export default function questionsReducers(state = initialState, action: ActionPr
 
     case RESET_GAME:
       return {...state, category: null, questions: []};
-      
+
     default:
       return state
   }
