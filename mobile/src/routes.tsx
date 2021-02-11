@@ -15,10 +15,9 @@ const Routes: React.FC = () => (
         headerShown: false,
         cardStyle: {backgroundColor: '#8257E5'}
         }}
-        initialRouteName="Landing"
     >
-        <Screen name="Landing" component={Landing} />
         <Screen name="Questions" component={Questions} />
+        <Screen name="Landing" component={Landing} />
         <Screen name="EndGame" component={EndGame} />
     </Navigator>
   </NavigationContainer>
