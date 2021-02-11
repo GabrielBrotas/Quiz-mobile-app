@@ -1,4 +1,3 @@
-import { v4 } from 'uuid';
 import Question, { IQuestion } from '../schemas/Question';
 
 interface ICreateQuestionServiceDTO {
@@ -14,17 +13,16 @@ interface ICreateQuestionServiceDTO {
 
 export default class CreateQuestionService {
   async execute({question, category, answers}: ICreateQuestionServiceDTO): Promise<IQuestion> {
-
     try {
       const newQuestion = await Question.create({
         question,
         category,
         answers,
-      })
-
+      });
       return newQuestion;
     } catch (err) {
-      return err
+      console.log(err)
+      return err;
     }
 
   }

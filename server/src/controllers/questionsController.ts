@@ -1,6 +1,6 @@
-import { Request, response, Response } from 'express';
+import { Request, Response } from 'express';
 
-import GetQuestionsService from '../services/GetQuestionService';
+import GetQuestionsService from '../services/GetQuestionsService';
 import CreateQuestionService from '../services/CreateQuestionService';
 import DeleteQuestionService from '../services/DeleteQuestionService';
 
@@ -18,6 +18,7 @@ export default class QuestionContrller {
       const newQuestion = await createQuestionService.execute({question, category, answers});
       return response.send(newQuestion);
     } catch (err) {
+      console.log(err)
       return response.send(err)
     }
   }
