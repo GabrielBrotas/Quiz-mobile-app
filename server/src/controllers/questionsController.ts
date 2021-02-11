@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 
-import GetQuestionsService from '../services/GetQuestionsService';
-import CreateQuestionService from '../services/CreateQuestionService';
-import DeleteQuestionService from '../services/DeleteQuestionService';
+import GetQuestionsService from '../services/questions/GetQuestionsService';
+import CreateQuestionService from '../services/questions/CreateQuestionService';
+import DeleteQuestionService from '../services/questions/DeleteQuestionService';
 
 export default class QuestionContrller {
 

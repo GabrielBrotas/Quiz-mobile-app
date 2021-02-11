@@ -1,4 +1,4 @@
-import Question from '../schemas/Question';
+import Question from '../../schemas/Question';
 
 export default class GetCategoriesService {
   async execute(): Promise<string[]> {

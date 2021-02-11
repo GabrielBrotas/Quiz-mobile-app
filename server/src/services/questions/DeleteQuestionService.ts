@@ -1,5 +1,5 @@
-import Question from '../schemas/Question';
-import mongoose from 'mongoose';
+import Question from '../../schemas/Question';
+// import mongoose from 'mongoose';
 
 export default class DeleteQuestionService {
   async execute(id: string): Promise<void> {

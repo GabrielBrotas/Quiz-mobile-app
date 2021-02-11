@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import GetCategoriesService from '../services/GetCategoriesService';
+import GetCategoriesService from '../services/categories/GetCategoriesService';
 
 export default class QuestionContrller {
   public async read(request: Request, response: Response): Promise<Response> {

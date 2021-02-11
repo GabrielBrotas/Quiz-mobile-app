@@ -1,4 +1,4 @@
-import Question, { IQuestion } from '../schemas/Question';
+import Question, { IQuestion } from '../../schemas/Question';
 
 export default class CreateQuestionService {
   async execute(): Promise<IQuestion[]> {
