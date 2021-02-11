@@ -20,26 +20,27 @@ const Questions: React.FC = () => {
         loremr eormseir mseoirm soeifms imsaoi dmasoid masodiamsdoimas doiamsd o?
       </Text>
 
-      <Button primary={false}>
-        Resposta numero 1
-      </Button>
+      <ButtonsContainer>
+        <Button primary={false}>
+          Resposta numero 1
+        </Button>
 
-      <Button primary={false}>
-        Resposta numero 1
-      </Button>
+        <Button primary={false}>
+          Resposta numero 1
+        </Button>
 
-      <Button primary={false}>
-        Resposta numero 1
-      </Button>
+        <Button primary={false}>
+          Resposta numero 1
+        </Button>
 
-      <Button primary={false}>
-        Resposta numero 1
-      </Button>
+        <Button primary={false}>
+          Resposta numero 1
+        </Button>
 
-      <Button primary={false}>
-        Resposta numero 1
-      </Button>
-
+        <Button primary={false}>
+          Resposta numero 1
+        </Button>
+      </ButtonsContainer>
     </Container>
   )
 };

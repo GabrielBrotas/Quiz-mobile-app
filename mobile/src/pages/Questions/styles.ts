@@ -16,7 +16,7 @@ export const Image = styled.Image`
   width: 100%;
   height: 150px;
 
-  border-radius: 10px;
+  border-radius: 10px; 
 `;
 
 export const Text = styled.Text`
@@ -27,7 +27,7 @@ export const Text = styled.Text`
 
   width: 100%;
   color: #32264D;
-  margin: 15px 0;
+  margin: 15px 0 25px;
 `;
 
 export const ButtonsContainer = styled.View`

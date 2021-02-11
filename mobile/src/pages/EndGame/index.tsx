@@ -1,11 +1,33 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 
-const EndGame = () => {
+import {
+  Container,
+  InfoContainer,
+  Title,
+  Text,
+  TextNumber
+} from './styles';
+
+import Button from '../../components/Button';
+
+const EndGame: React.FC = () => {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>End game</Text>
-    </View>
+    <Container>
+      <Title>
+        Parabens!!
+      </Title>
+
+      <InfoContainer>
+        <Text>Você acertou</Text>
+        <TextNumber>10</TextNumber>
+        <Text>de 15 questões.</Text>
+      </InfoContainer>
+
+
+      <Button>
+        Voltar ao início
+      </Button>
+    </Container>
   )
 };
 
