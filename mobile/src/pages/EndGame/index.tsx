@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+import { RESET_GAME } from '../../redux/types';
 
 import {
   Container,
@@ -10,7 +13,26 @@ import {
 
 import Button from '../../components/Button';
 
-const EndGame: React.FC = () => {
+interface IEndGameProps {
+  route: {
+    params: {
+      correctAnswers: number;
+    }
+  };
+}
+
+const EndGame: React.FC<IEndGameProps> = ({ route: { params: { correctAnswers } }}) => {
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
+  
+  const handleGoBackToHome = useCallback(() => {
+    dispatch({type: RESET_GAME});
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'Landing'}],
+    });
+  }, [])
+
   return (
     <Container>
       <Title>
@@ -19,12 +41,11 @@ const EndGame: React.FC = () => {
 
       <InfoContainer>
         <Text>Você acertou</Text>
-        <TextNumber>10</TextNumber>
+        <TextNumber>{correctAnswers}</TextNumber>
         <Text>de 15 questões.</Text>
       </InfoContainer>
 
-
-      <Button>
+      <Button onPress={handleGoBackToHome}>
         Voltar ao início
       </Button>
     </Container>

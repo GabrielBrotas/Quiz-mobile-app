@@ -24,8 +24,11 @@ export default class QuestionContrller {
   }
 
   public async read(request: Request, response: Response): Promise<Response> {
+    const { category } = request.body;
+
     const getQuestionService = new GetQuestionsService();
-    const questions = await getQuestionService.execute();
+    const questions = await getQuestionService.execute(category);
+    
     return response.send(questions)
   }
 
