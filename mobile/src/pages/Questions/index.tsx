@@ -19,7 +19,7 @@ const Questions: React.FC = () => {
   const dispatch = useDispatch();
 
   const { questions } = useSelector( (state: StateProps) => state.questions);
-  console.log(questions)
+  
   const [questionNumber, setQuestionNumber] = useState(0);
 
   const handleAnswer = useCallback((isCorrectAnswer) => {

@@ -12,11 +12,11 @@ export const Container = styled.View`
 `;
 
 export const Image = styled.Image`
-  margin-top: 30px;
+  margin-top: 10px;
   width: 100%;
   height: 150px;
 
-  border-radius: 10px; 
+  border-radius: 10px;
 `;
 
 export const Text = styled.Text`

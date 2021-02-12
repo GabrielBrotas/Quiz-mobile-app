@@ -18,6 +18,7 @@ export default class GetQuestionService {
     questions.forEach( question => {
       const shuffledAnswers = shuffleArray(question.answers)
       questionsFormated.push({
+        id: question._id,
         question: question.question,
         category: question.category,
         answers: shuffledAnswers,
