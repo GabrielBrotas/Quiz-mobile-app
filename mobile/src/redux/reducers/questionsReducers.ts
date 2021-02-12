@@ -1,4 +1,4 @@
-import { GET_QUESTIONS, RESET_GAME } from "../types";
+import { GET_QUESTIONS, RESET_GAME, SET_ANSWER, SET_ANSWERS } from "../types";
 
 const initialState = {
   questions: [],
@@ -16,6 +16,12 @@ export default function questionsReducers(state = initialState, action: ActionPr
 
     case GET_QUESTIONS:
       return {...state, questions: action.payload};
+
+    case SET_ANSWERS:
+      return {...state, correctAnswers: action.payload}
+
+    case SET_ANSWER:
+      return {...state, correctAnswers: state.correctAnswers + (action.payload as number)}
 
     case RESET_GAME:
       return {...state, correctAnswers: 0, questions: []};

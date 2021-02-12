@@ -1,5 +1,5 @@
 import api from "../../service/api"
-import { GET_QUESTIONS } from "../types"
+import { GET_QUESTIONS, SET_ANSWER, SET_ANSWERS } from "../types"
 
 export const getQuestions = (category: string) => (dispatch: Function) => {
   api.get(`/questions/${category}`)
@@ -9,4 +9,12 @@ export const getQuestions = (category: string) => (dispatch: Function) => {
     .catch( err => {
       console.log(err);
     });
+}
+
+export const setNumberOfCorrectAnswers = (correctAnswers: number) => (dispatch: Function) => {
+  dispatch({type: SET_ANSWERS, payload: correctAnswers});
+}
+
+export const increaseNumberOfCorrectAnswers = (correctAnswer: number) => (dispatch: Function) => {
+  dispatch({type: SET_ANSWER, payload: correctAnswer});
 }
