@@ -13,11 +13,18 @@ export default class GetQuestionService {
       questions = await Question.find();
     }
 
-    questions.map(question => {
+    const questionsFormated: any = [];
+
+    questions.forEach( question => {
       const shuffledAnswers = shuffleArray(question.answers)
-      return {question, answers: shuffledAnswers}
+      questionsFormated.push({
+        question: question.question,
+        category: question.category,
+        answers: shuffledAnswers,
+        image: `http://10.0.0.102:3333/uploads/${question.image}`
+      })
     })
 
-    return questions;
+    return questionsFormated;
   }
 }

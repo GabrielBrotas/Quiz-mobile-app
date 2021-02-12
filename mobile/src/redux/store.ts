@@ -24,7 +24,8 @@ interface QuestionDTO {
       answer: string;
       isCorrectAnswer: boolean;
     }
-  ]
+  ];
+  image: string;
 };
 
 export interface StateProps {

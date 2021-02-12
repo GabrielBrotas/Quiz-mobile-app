@@ -9,6 +9,7 @@ export interface IQuestion extends Document {
   question: string;
   category: string;
   answers: IQuestionAnswer[];
+  image: string;
 }
 
 const QuestionSchema = new Schema({

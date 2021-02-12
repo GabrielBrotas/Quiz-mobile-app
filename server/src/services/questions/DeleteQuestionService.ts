@@ -1,5 +1,5 @@
 import Question from '../../schemas/Question';
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
 export default class DeleteQuestionService {
   async execute(id: string): Promise<void> {
@@ -7,12 +7,12 @@ export default class DeleteQuestionService {
       _id: id
     })
 
-    // mongoose.connection.db.dropDatabase()
-    //   .then( res => {
-    //     console.log('db deletado')
-    //   })
-    //   .catch( err => {
-    //     console.log('erro')
-    //   })
+    mongoose.connection.db.dropDatabase()
+      .then( res => {
+        console.log('db deletado')
+      })
+      .catch( err => {
+        console.log('erro')
+      })
   }
 }

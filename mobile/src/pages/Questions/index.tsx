@@ -14,14 +14,12 @@ import {
 
 import Button from '../../components/Button';
 
-import ElonMusk from '../../assets/elonmusk.jpg';
-
 const Questions: React.FC = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
   const { questions } = useSelector( (state: StateProps) => state.questions);
-
+  console.log(questions)
   const [questionNumber, setQuestionNumber] = useState(0);
 
   const handleAnswer = useCallback((isCorrectAnswer) => {
@@ -52,7 +50,9 @@ const Questions: React.FC = () => {
 
   return (
     <Container style={{flex: 1, justifyContent: 'center'}}>
-      <Image source={ElonMusk} />
+      <Image source={{
+        uri: questions[questionNumber].image
+      }} />
 
         <Text>{questions[questionNumber].question}</Text>
 

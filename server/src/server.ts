@@ -9,8 +9,8 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(routes);
-app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')))
+app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
 app.listen(3333, () => {
     console.log('server runing in port 3333')
-})
+});
