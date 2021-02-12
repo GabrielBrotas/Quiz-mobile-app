@@ -32,6 +32,10 @@ const QuestionSchema = new Schema({
       }
     }
   ],
+  image: {
+    type: String,
+    required: true
+  }
 })
 
 export default mongoose.model<IQuestion>("Question", QuestionSchema)

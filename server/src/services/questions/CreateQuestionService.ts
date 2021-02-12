@@ -8,16 +8,18 @@ interface ICreateQuestionServiceDTO {
       answers: string;
       isCorrectAnswer: boolean;
     }
-  ]
+  ],
+  image: string;
 }
 
 export default class CreateQuestionService {
-  async execute({question, category, answers}: ICreateQuestionServiceDTO): Promise<IQuestion> {
+  async execute({question, category, answers, image}: ICreateQuestionServiceDTO): Promise<IQuestion> {
     try {
       const newQuestion = await Question.create({
         question,
         category,
         answers,
+        image
       });
       return newQuestion;
     } catch (err) {

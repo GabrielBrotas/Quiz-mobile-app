@@ -11,11 +11,28 @@ export default class QuestionContrller {
       question,
       category,
       answers,
-    } = request.body
+      isCorrectAnswers
+    } = request.body;
+
+    const answersFormated = answers.map( (answer: string, index: number) => {
+      return {
+        answer: answers[index],
+        isCorrectAnswer: isCorrectAnswers[index]
+      }
+    });
+
+    const uploadedImage = request.file as Express.Multer.File;
+    const image = uploadedImage.filename;
 
     try {
       const createQuestionService = new CreateQuestionService();
-      const newQuestion = await createQuestionService.execute({question, category, answers});
+      const newQuestion = await createQuestionService.execute({
+        question,
+        category,
+        answers: answersFormated,
+        image
+      });
+
       return response.send(newQuestion);
     } catch (err) {
       console.log(err)
