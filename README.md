@@ -11,8 +11,7 @@
   > Expo; <br />
   > TypeScript; <br />
   > Node.js; <br />
-  > MongoDb; <br />
-  > MongoDb; <br />
+  > MongoDB; <br />
 
 # Folders
   <a href="https://github.com/GabrielBrotas/quiz-app/tree/main/mobile">Mobile</a> <br />
