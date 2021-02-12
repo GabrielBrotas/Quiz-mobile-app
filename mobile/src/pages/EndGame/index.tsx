@@ -30,9 +30,16 @@ const EndGame: React.FC = () => {
 
   return (
     <Container>
-      <Title>
-        Parabens!!
-      </Title>
+      {correctAnswers >= 8 ? (
+        <Title>
+          Parabens!!
+        </Title>
+      ) : (
+        <Title>
+          Oh não,
+        </Title>
+      )}
+
 
       <InfoContainer>
         <Text>Você acertou</Text>
