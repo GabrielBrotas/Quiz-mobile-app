@@ -1,7 +1,8 @@
-import { GET_QUESTIONS, GET_CATEGORIES, RESET_GAME } from "../types";
+import { GET_QUESTIONS, RESET_GAME } from "../types";
 
 const initialState = {
   questions: [],
+  correctAnswers: 0
 };
 
 interface ActionProps {
@@ -16,11 +17,8 @@ export default function questionsReducers(state = initialState, action: ActionPr
     case GET_QUESTIONS:
       return {...state, questions: action.payload};
 
-    case GET_CATEGORIES:
-      return {...state, category: action.payload};
-
     case RESET_GAME:
-      return {...state, category: null, questions: []};
+      return {...state, correctAnswers: 0, questions: []};
 
     default:
       return state

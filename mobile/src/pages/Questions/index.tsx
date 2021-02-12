@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { getQuestions } from '../../redux/actions/questionsActions';
+import { useSelector } from 'react-redux';
 import { StateProps } from '../../redux/store';
 
 import {
@@ -16,26 +15,13 @@ import Button from '../../components/Button';
 
 import ElonMusk from '../../assets/elonmusk.jpg';
 
-interface IQuestionProps {
-  route: {
-    params: {
-      category: string;
-    }
-  };
-}
-
-const Questions: React.FC<IQuestionProps> = ({ route: { params: { category } } }) => {
+const Questions: React.FC = () => {
   const navigation = useNavigation();
-  const dispatch = useDispatch();
 
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [questionNumber, setQuestionNumber] = useState(0);
 
   const { questions } = useSelector( (state: StateProps) => state.questions);
-
-  useEffect(() => {
-    dispatch(getQuestions());
-  }, [])
 
   const handleAnswer = useCallback((isCorrectAnswer) => {
     if (isCorrectAnswer) {

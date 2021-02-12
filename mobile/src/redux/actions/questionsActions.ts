@@ -1,8 +1,8 @@
 import api from "../../service/api"
 import { GET_QUESTIONS } from "../types"
 
-export const getQuestions = () => (dispatch: Function) => {
-  api.get('/questions')
+export const getQuestions = (category: string) => (dispatch: Function) => {
+  api.get(`/questions/${category}`)
     .then( res => {
       dispatch({type: GET_QUESTIONS, payload: res.data});
     })

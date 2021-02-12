@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { getCategories } from '../../redux/actions/categoriesActions';
+import { getQuestions } from '../../redux/actions/questionsActions';
 import { StateProps } from '../../redux/store'
 
 import {
@@ -25,7 +26,8 @@ const Landing: React.FC = () => {
   }, []);
 
   const handleStartQuiz = useCallback( (category: string) => {
-    navigation.navigate('Questions', {category});
+    dispatch(getQuestions(category))
+    navigation.navigate('Questions')
   }, []);
 
   return (

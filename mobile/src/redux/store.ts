@@ -34,6 +34,7 @@ export interface StateProps {
   };
   questions: {
     questions: QuestionDTO[];
+    correctAnswers: number;
   };
 };
 

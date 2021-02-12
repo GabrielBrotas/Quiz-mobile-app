@@ -24,7 +24,7 @@ interface IEndGameProps {
 const EndGame: React.FC<IEndGameProps> = ({ route: { params: { correctAnswers } }}) => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  
+
   const handleGoBackToHome = useCallback(() => {
     dispatch({type: RESET_GAME});
     navigation.reset({
