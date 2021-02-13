@@ -5,6 +5,7 @@
   In this quiz you can choose one categorie to answer 15 questions. 
   
 ## View
+<img src="https://github.com/GabrielBrotas/Happy-NLW3/blob/main/images/happy-mobile.gif" width="800px" height="500px" />
 
 ## 💻 Technologies
   > React Native; <br />
