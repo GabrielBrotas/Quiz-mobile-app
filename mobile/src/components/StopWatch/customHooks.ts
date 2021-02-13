@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 
 export const useTimer = () => {
   const [isRunning, setIsRunning] = useState(false);
-  const [elapsedTime, setElapsedTime] = useState(10);
+  const [elapsedTime, setElapsedTime] = useState(600);
 
   useEffect( () => {
     let interval: any;
