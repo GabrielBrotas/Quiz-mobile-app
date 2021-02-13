@@ -5,6 +5,7 @@
   In this quiz you can choose one categorie to answer 15 questions. 
   
 ## View
+<img src="https://github.com/GabrielBrotas/Happy-NLW3/blob/main/images/happy-mobile.gif" width="800px" height="500px" />
 
 ## 💻 Technologies
   > React Native; <br />
@@ -16,20 +17,3 @@
 # Folders
   <a href="https://github.com/GabrielBrotas/quiz-app/tree/main/mobile">Mobile</a> <br />
   <a href="https://github.com/GabrielBrotas/quiz-app/tree/main/server">Server</a> <br />
-
-## 💻 How to Run;
-  #### Mobile
-  >#go to the mobile folder; <br />
-  > cd mobile <br />
-  >#install the dependencies; <br />
-  > yarn install <br />
-  >#Run Application <br />
-  > yarn start <br />
-   
-  #### Server
-  >#go to the server folder; <br />
-  > cd server <br />
-  >#install the dependencies; <br />
-  > yarn install <br />
-  >#Run Application <br />
-  > yarn dev:server <br />
